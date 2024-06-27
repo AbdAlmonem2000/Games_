@@ -31,11 +31,10 @@ export default function GameDetails() {
       fetchGameDetails();
     }, [id]);
   
-    if (loading) return <div><CircleLoader
-    color="#152954"
-    size={100}
-  /></div>;
-    if (error) return <div>Error: {error.message}</div>;
+    if (loading === true) return <div className='flex pt-40 justify-center items-center'>
+  <span className="loader  " />
+    </div>
+    if (error) return <div className='flex justify-center items-center'><h1> Error: {error.message}</h1></div>;
   return <>
    <div className="container mx-auto my-10  ">
       <div className="flex">
