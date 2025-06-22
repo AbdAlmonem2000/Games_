@@ -29,7 +29,7 @@ export default function Register() {
     name: yup.string().min(5, 'the min lenth is 5').max(15, 'the max lenth is 15').required('the name is required'),
     phone: yup.string().matches(/^01[0125][0-9]{8}$/, 'the phone must egyption number').required('the phone is required'),
     email: yup.string().email('the email is not valid').required('the email is required'),
-    password: yup.string().matches(/^[A-Z][a-z0-9]{5,10}$/, 'the password is not valid').required('the password is required'),
+    password: yup.string().matches(/^[A-Z][a-z0-9]{5,10}$/, 'the password is not valid').required('Input must start with a capital letter and have 5–10 lowercase letters or numbers.'),
     rePassword: yup.string().oneOf([yup.ref('password')], 'the password is not match').required('the rePassword is required')
   })
 
